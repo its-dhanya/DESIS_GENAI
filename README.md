@@ -1,9 +1,5 @@
 # Generative AI Course Assignments Report
 
-**Course:** Generative AI  
-**Student:** [Your Name]  
-**Date:** [Submission Date]
-
 ## Overview
 
 This repository contains two projects:
