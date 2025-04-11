@@ -1,0 +1,31 @@
+InvestoMate is built using the following technology stack:
+1. Frontend
+React -Vite for fast and optimized UI rendering
+Tailwind CSS for efficient styling and responsiveness
+2. Backend
+endpoints.
+Node.js with Express.js: Manages server-side logic and API
+3. Database
+PostgreSQL: Serves as the relational database management
+system for storing user data and financial information.
+4. Authentication
+Firebase Authentication: Ensures secure and seamless user
+authentication with built-in support for multiple sign-in
+methods
+5. Machine Learning and AI Integration
+Python : Handles ML-based investment predictions.
+NumPy, Pandas: Used for data preprocessing and financial
+computations.
+Scikit-Learn, Tensorflow: Implements ML models for risk
+assessment and return predictions.
+LSTM (Long Short-Term Memory): Used for time-series
+forecasting of financial trends.
+GenAI (gemini): Enables AI-driven decision-making and
+potential chatbot integration for financial guidance.
+Vadersentiment : For sentiment analysis
+6. API
+Alpha Vantage API: Provides additional financial data, including
+stock price trends and market insights.
+7. Development Tools
+GitHub: Used for version control and collaborative
+development.

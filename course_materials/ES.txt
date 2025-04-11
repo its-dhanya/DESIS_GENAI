@@ -1,0 +1,26 @@
+The GPIO namely, General-Purpose Input Output module
+gives the access of outside world to the processor and vice
+versa. Be it sensors or actuators or switches are connected to
+the processor through this module.
+
+ In TIVA TM4C123GH6PM Launch Pad there are 43
+programmable input/output pins divided into 6 ports.
+
+ The Port F is special as it has an onboard LED connected and
+two onboard switches connected in negative logic.The GPIO module needs to be configured prior to the usage. In
+embedded-C we generally use a initialization function to configured
+the port we are going to use. These simple steps make sure that all the
+ports are configured and initialized. The GPIOLOCK register enables write access to
+the GPIOCR register 0x4C4F434B to the GPIOLOCK
+register unlocks the GPIOCR register.
+
+Writing any other value to the GPIOLOCK
+register re-enables the locked state. Reading the
+GPIOLOCK register returns the lock status rather than
+the 32-bit value that was previously written.This register is only valid for ports and pins that can be used as ADC AINx inputs.
+• If any pin is to be used as an ADC input, the appropriate bit in GPIOAMSEL must
+be set to disable the analog isolation circuit.
+• The GPIOAMSEL register controls isolation circuits to the analog side of a unified
+I/O pad. Because the GPIOs may be driven by a 5-V source and affect analog
+operation, analog circuitry requires isolation from the pins when they are not used in
+their analog function

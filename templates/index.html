@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Course Chatbot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      h1, h2 {
+        text-align: center;
+      }
+      .chat-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .result {
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+      }
+      .result .doc {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      label {
+        font-weight: bold;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+        resize: vertical;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <h1>Course Chatbot</h1>
+      <form action="/chat" method="POST">
+        <label for="query">Enter your query:</label><br />
+        <textarea id="query" name="query" placeholder="e.g., Please provide the material from the course_materials folder."></textarea><br />
+        <input type="submit" value="Submit" />
+      </form>
+
+      {% if query %}
+      <div class="result">
+        <h2>Results for: "{{ query }}"</h2>
+        <p><strong>{{ response.message }}</strong></p>
+        {% if response.results %}
+          {% for result in response.results %}
+          <div class="doc">
+            <p><strong>Filename:</strong> {{ result.filename }}</p>
+            <p><strong>Similarity:</strong> {{ result.similarity }}</p>
+            <p><strong>Excerpt:</strong> {{ result.content[:300] }}{% if result.content|length > 300 %}...{% endif %}</p>
+          </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
